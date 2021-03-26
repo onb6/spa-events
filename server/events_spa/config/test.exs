@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :events_spa, EventsSpa.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "events_spa",
+  password: "qEt6NVnrjXPa",
   database: "events_spa_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

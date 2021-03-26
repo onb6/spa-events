@@ -2,6 +2,7 @@ defmodule EventsSpaWeb.PageController do
   use EventsSpaWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    events = EventsSpa.Events.list_events()
+    render(conn, "index.html", events: events)
   end
 end

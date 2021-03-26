@@ -60,8 +60,14 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :events_spa, EventsSpa.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "events_spa",
+  password: "qEt6NVnrjXPa",
   database: "events_spa_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :cors_plug,
+  origin: ["http://localhost:3000"],
+  max_age: 86400,
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  headers: ["x-auth", "content-type"]
