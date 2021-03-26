@@ -11,7 +11,7 @@ function InvitesRSVP({ event_id, session, invites, user }) {
     useEffect(() => fetch_invites(), [event_id]);
     useEffect(() => setInvite(findInvite(session.user_id, event_id, invites)), [session]);
     
-    function onClick() {
+    function onChange() {
         console.log(radioValue);
         update_invite(invite, getResponse(radioValue))
         fetch_invites();
@@ -24,7 +24,7 @@ function InvitesRSVP({ event_id, session, invites, user }) {
     }
   
     return (
-        <ButtonGroup toggle onClick={onClick} size="lg" name="rsvp-containter" aria-label="Basic example">
+        <ButtonGroup toggle onChange={onChange} size="lg" name="rsvp-containter" aria-label="Basic example">
             <ToggleButton
                 type="radio"
                 variant="outline-success"

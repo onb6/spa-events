@@ -1,0 +1,15 @@
+[Unit]
+Description=HW09 Events SPA App
+
+[Service]
+Type=simple
+User=events_spa
+Group=events_spa
+Restart=on-failure
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/events_spa/spa-events/server/events_spa
+ExecStart=/bin/bash /home/events_spa/spa-events/server/events_spa/start.sh
+
+[Install]
+WantedBy=multi-user.target
