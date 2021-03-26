@@ -11,7 +11,7 @@ export DATABASE_URL=ecto://events_spa:bad@localhost/events_spa_prod
 mix deps.get --only prod
 mix compile
 
-CFGD=$(readlink -f ~/.config/events)
+CFGD=$(readlink -f ~/.config/events_spa)
 
 if [ ! -d "$CFGD" ]; then
     mkdir -p "$CFGD"

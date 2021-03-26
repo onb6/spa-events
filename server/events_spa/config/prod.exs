@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :events_spa, EventsSpaWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
+  url: [host: "events-spa-backend.onb6.fun", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
@@ -61,11 +61,17 @@ config :logger, level: :info
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
 #
-#     config :events_spa, EventsSpaWeb.Endpoint, server: true
+     config :events_spa, EventsSpaWeb.Endpoint, server: true
 #
 # Note you can't rely on `System.get_env/1` when using releases.
 # See the releases documentation accordingly.
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
+config :cors_plug,
+  origin: ["http://events-spa.onb6.fun"],
+  max_age: 86400,
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  headers: ["x-auth", "content-type"]
+
 import_config "prod.secret.exs"
